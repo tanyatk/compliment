@@ -1,0 +1,8 @@
+<div class="row mt-5 justify-content-md-center">
+    <div class="col col col-lg-6">
+        <h1 *ngFor="let item of items" class="text-center">
+            {{item.name}}, <span *ngIf="item.age <= 50">Вы молоды</span><span *ngIf="item.age >= 51">Вы в возрасте</span>.
+        </h1>
+        <a routerLink="" routerLinkActive="active" (onclick)="dataClear" class="btn btn-default mx-auto d-block w-50">Назад</a>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row mt-5 justify-content-md-center">
+    <div class="col col col-lg-4">
+        <fieldset [formGroup]="userDataControl" class="form-group card p-5">
+            <div>
+                <mat-form-field>
+                    <mat-label>Имя:</mat-label>
+                    <input matInput placeholder="Имя" formControlName="name">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Возраст:</mat-label>
+                    <input matInput placeholder="Имя" formControlName="age">
+                    <mat-error *ngIf="userDataControl.get('age').errors">
+                        Вы ввели некорректный возраст.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </fieldset>
+        <button (click)="addItem(name, age)" [disabled]="userDataControl.get('age').errors" class="btn btn-default mx-auto d-block w-50">Далее</button>
+    </div>
+</div>
